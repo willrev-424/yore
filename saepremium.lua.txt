@@ -1,0 +1,61 @@
+local Onyx = loadstring(game:HttpGet("https://cdn.jnkie.com/OnyxUI.lua"))()
+
+-- KONFIGURASI
+Onyx.Appearance = {
+    Title = "W424 HUB",
+    Subtitle = "Enter your key to continue",
+    KeylessTitle = "W424 HUB",
+    KeylessSubtitle = "No key required for this build - you're verified.",
+    Icon = "rbxassetid://96848424314690",
+}
+
+Onyx.Links = {
+    GetKey = "https://discord.gg/fZzN5HhFB",
+    Discord = "https://discord.gg/fZzN5HhFB",
+}
+
+Onyx.Storage = {
+    FileName = "W424Hub_key",
+    Remember = true,
+    AutoLoad = true,
+}
+
+Onyx.Shop = {
+    Enabled = false,
+    Icon = "",
+    Title = "Get Key",
+    Subtitle = "Buy VIP key",
+    ButtonText = "Buy",
+    Link = "https://discord.gg/fZzN5HhFB"
+}
+
+-- SCRIPT UTAMA (di-load via loadstring)
+local function MainScript()
+    print("✅ Key valid! Loading main script...")
+
+    -- GANTI URL INI DENGAN RAW SCRIPT UTAMA KAMU
+    local MainScriptURL = "https://pastefy.app/ButXiAb8/raw"
+
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(MainScriptURL))()
+    end)
+
+    if success then
+        print("✅ Main script loaded!")
+    else
+        warn("❌ Gagal load script: " .. tostring(err))
+    end
+
+    ScriptLoaded = true
+end
+
+-- JALANKAN SISTEM KEY
+Onyx.Callbacks.OnSuccess = function()
+    MainScript()
+end
+
+Onyx:LaunchJunkie({
+    Service = "wilrevv",
+    Identifier = "1172741",
+    Provider = "W424HUB"
+})
